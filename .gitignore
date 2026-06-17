@@ -1,0 +1,15 @@
+# --- Nội dung bản quyền (bản lưu Investing.com để tham khảo) ---
+/reference/
+
+# --- WordPress runtime ---
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/debug.log
+*.log
+
+# --- Hệ điều hành / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
