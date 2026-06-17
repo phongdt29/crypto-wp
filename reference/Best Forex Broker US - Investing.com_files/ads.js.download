@@ -1,0 +1,17 @@
+(function() {
+    var appendEl    = function() {
+        var e               = document.createElement('div');
+        e.id            = 'QFuzzwYKrL';
+        e.style.display = 'none';
+
+        document.body.appendChild(e);
+    };
+
+    if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', appendEl, true);
+    }
+
+    else {
+        document.attachEvent('onDOMContentLoaded', appendEl);
+    }
+})();

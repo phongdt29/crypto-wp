@@ -1,0 +1,103 @@
+/* ===== Broker Manager — broker cards (Investing.com green/comparison variant) ===== */
+.brkm-wrap{
+	--bk-green1:#00E379;--bk-green2:#00C85B;--bk-green-h:#00c853;
+	--bk-star:#F6934C;--bk-star-empty:#e0e0e0;--bk-score:#9E9E9E;
+	--bk-ink:#212121;--bk-text:#3a4654;--bk-line:#e9eef5;--bk-link:#7580a2;
+	--bk-ribbon:#f9b94a;--bk-ribbon-d:#c8901f;--bk-risk:#90A4AE;--bk-specbar:#eef4fb;
+	font-family:"Open Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--bk-text)
+}
+.brkm-section-title{font-size:1.4rem;font-weight:800;margin:0 0 14px;color:var(--bk-ink)}
+
+/* List = thẻ trắng bo góc, tách rời */
+.brkm-table-rows{display:flex;flex-direction:column;gap:18px;background:transparent}
+.brk-row{
+	position:relative;background:#fff;border:1px solid var(--bk-line);border-radius:14px;
+	box-shadow:0 1px 3px rgba(33,33,33,.05);transition:box-shadow .16s;overflow:visible
+}
+.brk-row:hover{box-shadow:0 8px 26px rgba(33,33,33,.09)}
+
+/* Ribbon dạng cờ gấp */
+.brk-ribbon{
+	position:absolute;top:18px;left:-6px;z-index:2;
+	background:var(--bk-ribbon);color:#1a1a1a;
+	font-weight:800;font-size:.78rem;line-height:1;letter-spacing:.3px;text-transform:uppercase;
+	padding:8px 30px 8px 16px;
+	clip-path:polygon(0 0,100% 0,calc(100% - 14px) 50%,100% 100%,0 100%)
+}
+.brk-ribbon::before{content:"";position:absolute;left:0;bottom:-6px;border-style:solid;border-width:6px 6px 0 0;border-color:var(--bk-ribbon-d) transparent transparent transparent}
+
+/* Hàng trên: logo | features | cta */
+.brk-top{display:grid;grid-template-columns:200px minmax(0,1fr) 210px;gap:24px;align-items:center;padding:26px 24px 22px}
+
+/* Logo + stars */
+.brk-col-brand{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.brk-logo{display:flex;align-items:center;justify-content:center;width:100%;min-height:60px;text-decoration:none}
+.brk-logo img{max-width:170px;max-height:60px;object-fit:contain}
+.brk-logo-text{font-weight:800;font-size:1.25rem;color:var(--bk-ink);line-height:1.15}
+.brk-stars{display:flex;align-items:center;gap:7px}
+.brkm-stars{white-space:nowrap}
+.brkm-stars .s{color:var(--bk-star-empty);font-size:1.1rem;letter-spacing:1px}
+.brkm-stars .s.full{color:var(--bk-star)}
+.brkm-stars .s.half{background:linear-gradient(90deg,var(--bk-star) 50%,var(--bk-star-empty) 50%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.brk-score{color:var(--bk-score);font-weight:400;font-size:1.05rem}
+
+/* Features — check tròn xanh */
+.brk-feats{list-style:none;margin:0;padding:0}
+.brk-feats li{position:relative;padding:6px 0 6px 30px;font-size:1rem;color:var(--bk-ink);line-height:1.4}
+.brk-feats li::before{content:"";position:absolute;left:0;top:5px;width:19px;height:19px;border-radius:50%;background:var(--bk-green2)}
+.brk-feats li::after{content:"";position:absolute;left:6px;top:9px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+/* CTA */
+.brk-col-cta{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.brk-visit{
+	display:flex;align-items:center;justify-content:center;gap:8px;
+	background:linear-gradient(180deg,var(--bk-green1) 0%,var(--bk-green2) 100%);
+	color:#fff;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:.3px;
+	width:100%;max-width:185px;height:56px;border-radius:8px;text-decoration:none;
+	box-shadow:0 3px 6px rgba(0,0,0,.15);transition:.15s
+}
+.brk-visit::after{content:"»";font-size:1.2em;line-height:1}
+.brk-visit:hover{background:var(--bk-green-h);color:#fff}
+.brk-review{color:var(--bk-link);font-size:.95rem;font-weight:600;text-decoration:none}
+.brk-review:hover{text-decoration:underline}
+.brk-risk{color:var(--bk-risk);font-size:.8rem;line-height:1.3;max-width:185px}
+
+/* Specs bar — dải full-width dưới đáy */
+.brk-specs-bar{
+	display:grid;grid-template-columns:repeat(3,1fr);align-items:center;
+	background:var(--bk-specbar);border-top:1px solid #e3ecf6;
+	padding:14px 24px;border-radius:0 0 14px 14px
+}
+.brk-specs-bar .sp{display:flex;align-items:center;justify-content:center;gap:8px;font-size:.95rem}
+.brk-specs-bar .lbl{font-weight:700;color:var(--bk-ink)}
+.brk-specs-bar b{font-weight:400;color:var(--bk-text)}
+.brk-specs-bar .ic{width:20px;height:20px;flex:0 0 20px;font-style:normal;font-size:1.05rem;line-height:1;text-align:center;opacity:.9}
+.brk-specs-bar .ic-assets::before{content:"📊"}
+.brk-specs-bar .ic-deposit::before{content:"💵"}
+.brk-specs-bar .ic-mobile::before{content:"📱"}
+
+.brkm-disclaimer{margin-top:14px;font-size:.8rem;color:#9aa7b6}
+.brkm-empty{padding:30px;text-align:center;color:#9aa7b6}
+
+/* FAQ */
+.brkm-faq-item{border:1px solid var(--bk-line);border-radius:8px;margin-bottom:10px;background:#fff;overflow:hidden}
+.brkm-faq-item summary{cursor:pointer;padding:16px 18px;font-weight:700;color:var(--bk-ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brkm-faq-item summary::-webkit-details-marker{display:none}
+.brkm-faq-item summary::after{content:"+";font-size:1.4rem;color:var(--bk-green2);font-weight:400;line-height:1}
+.brkm-faq-item[open] summary::after{content:"–"}
+.brkm-faq-a{padding:0 18px 18px;color:#54657a;line-height:1.65}
+
+/* Responsive */
+@media(max-width:920px){
+	.brk-top{grid-template-columns:150px minmax(0,1fr);gap:16px 20px}
+	.brk-col-cta{grid-column:1 / -1;flex-direction:row;flex-wrap:wrap;justify-content:center}
+	.brk-col-cta .brk-visit{flex:1;max-width:260px}
+	.brk-col-cta .brk-risk{flex:1 1 100%}
+}
+@media(max-width:600px){
+	.brk-top{grid-template-columns:1fr;text-align:center}
+	.brk-col-brand{align-items:center}
+	.brk-feats li{text-align:left}
+	.brk-specs-bar{grid-template-columns:1fr;gap:8px;justify-items:center}
+	.brk-specs-bar .sp{justify-content:flex-start}
+}
