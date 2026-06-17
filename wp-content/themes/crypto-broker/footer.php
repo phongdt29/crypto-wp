@@ -5,6 +5,47 @@
 ?>
 </main>
 
+<section class="footer-apps">
+	<div class="container">
+		<div class="fa-grid">
+
+			<div class="fa-install">
+				<h3>Install Our Apps</h3>
+				<p>Scan the QR code or install from the link</p>
+				<div class="fa-badges">
+					<a class="fa-badge" href="#" rel="nofollow">
+						<svg viewBox="0 0 24 24" width="22" height="22" fill="#111"><path d="M16.36 1.43c0 1.07-.39 2.07-1.17 2.9-.94 1-2.06 1.58-3.27 1.49-.02-1.06.43-2.13 1.18-2.93.82-.87 2.2-1.5 3.26-1.46zM20.5 17.2c-.57 1.34-.85 1.93-1.59 3.1-1.03 1.65-2.49 3.7-4.3 3.71-1.6.02-2.01-1.05-4.18-1.04-2.17.01-2.62 1.06-4.22 1.05-1.8-.02-3.18-1.87-4.21-3.52C-.66 16.18-.95 10.1 1.7 7.12c.92-1.06 2.3-1.73 3.62-1.73 1.58 0 2.58 1.05 3.88 1.05 1.26 0 2.04-1.05 3.87-1.05 1.18 0 2.42.64 3.31 1.76-2.91 1.61-2.43 5.79.72 7.46z"/></svg>
+						<span><small>Download on the</small>App Store</span>
+					</a>
+					<a class="fa-badge" href="#" rel="nofollow">
+						<svg viewBox="0 0 24 24" width="22" height="22"><path d="M3.6 2.3 13.4 12 3.6 21.7c-.36-.22-.6-.62-.6-1.1V3.4c0-.48.24-.88.6-1.1z" fill="#34A853"/><path d="M16.8 8.7 13.4 12l3.4 3.3 3.5-2c.7-.4.7-1.5 0-1.9l-3.5-2z" fill="#FBBC04"/><path d="M3.6 2.3 13.4 12l3.4-3.3L5.3 2.1c-.6-.34-1.27-.1-1.7.2z" fill="#EA4335"/><path d="M3.6 21.7 13.4 12l3.4 3.3-11.5 6.6c-.43.3-1.1.5-1.7.2z" fill="#4285F4"/></svg>
+						<span><small>Get it on</small>Google Play</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="fa-qr">
+				<?php echo cbk_qr_svg( 120 ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+			</div>
+
+			<nav class="fa-links">
+				<a href="#">Blog</a>
+				<a href="#">Portfolio</a>
+				<a href="#">About Us</a>
+				<a href="#">Help &amp; Support</a>
+			</nav>
+
+			<nav class="fa-links">
+				<a href="#">Mobile</a>
+				<a href="#">Widgets</a>
+				<a href="#">Advertise</a>
+				<a href="#">Authors</a>
+			</nav>
+
+		</div>
+	</div>
+</section>
+
 <footer class="site-footer">
 	<div class="container">
 
