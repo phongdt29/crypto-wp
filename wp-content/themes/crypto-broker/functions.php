@@ -22,8 +22,8 @@ add_action( 'after_setup_theme', 'cbk_setup' );
 function cbk_assets() {
 	// Open Sans — đúng font Investing.com dùng.
 	wp_enqueue_style( 'cbk-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap', array(), null );
-	wp_enqueue_style( 'crypto-broker', get_stylesheet_uri(), array( 'cbk-fonts' ), '1.4.0' );
-	wp_enqueue_script( 'crypto-broker', get_template_directory_uri() . '/assets/theme.js', array(), '1.4.0', true );
+	wp_enqueue_style( 'crypto-broker', get_stylesheet_uri(), array( 'cbk-fonts' ), '1.6.0' );
+	wp_enqueue_script( 'crypto-broker', get_template_directory_uri() . '/assets/theme.js', array(), '1.6.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'cbk_assets' );
 

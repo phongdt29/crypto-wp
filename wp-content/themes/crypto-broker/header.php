@@ -49,6 +49,8 @@
 					<li><a href="#">Prop Trading</a></li>
 					<li><a href="#">Trading Platforms</a></li>
 					<li><a href="#">Broker Reviews</a></li>
+					<li><a href="#">Broker Comparisons</a></li>
+					<li><a href="#">Guides</a></li>
 				</ul>
 			</nav>
 		</div>

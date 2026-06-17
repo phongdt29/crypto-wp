@@ -13,19 +13,37 @@ $now   = gmdate( 'F Y' );
 	<div class="container">
 		<h1 class="introduction__title">Best Forex Brokers – <?php echo esc_html( $now ); ?></h1>
 
-		<div class="entry-meta">
-			<span class="updated">Updated: <?php echo esc_html( $now ); ?></span>
-			<span class="author-box">Written by <b>CryptoWP Team</b></span>
-			<span class="author-box">Reviewed by <b>Expert Panel</b></span>
+		<div class="updated">Updated : <?php echo esc_html( strtoupper( $now ) ); ?></div>
+
+		<div class="author-boxes">
+			<?php
+			$authors = array(
+				array( 'role' => 'Written By', 'name' => 'Alex Carter', 'init' => 'AC', 'c' => '#2a7ade',
+					'icon' => '<path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>' ),
+				array( 'role' => 'Reviewed By', 'name' => 'Minh Nguyen', 'init' => 'MN', 'c' => '#15a86b',
+					'icon' => '<path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.49 4.49 0 0 1 9.5 14z"/>' ),
+				array( 'role' => 'Fact Checked By', 'name' => 'Sophia Lee', 'init' => 'SL', 'c' => '#e0762a',
+					'icon' => '<path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3zm-1.2 13.4-3.2-3.2 1.4-1.4 1.8 1.8 4.2-4.2 1.4 1.4-5.6 5.6z"/>' ),
+			);
+			foreach ( $authors as $a ) : ?>
+				<div class="author-box">
+					<span class="ab-avatar" style="background:<?php echo esc_attr( $a['c'] ); ?>"><?php echo esc_html( $a['init'] ); ?></span>
+					<span class="ab-info">
+						<span class="ab-role"><svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><?php echo $a['icon']; // phpcs:ignore ?></svg><?php echo esc_html( $a['role'] ); ?></span>
+						<span class="ab-name"><?php echo esc_html( $a['name'] ); ?></span>
+					</span>
+				</div>
+			<?php endforeach; ?>
 		</div>
 
 		<p class="introduction__description">
-			Compare <?php echo esc_html( $total ); ?> top regulated Forex &amp; CFD brokers. The ranking below is based on trustworthiness, trading costs, spreads, leverage, platforms and the deposit/withdrawal experience — helping you choose the broker that fits you best.
+			Trading Forex starts with picking the right broker. We've done the hard work for you, comparing <?php echo esc_html( $total ); ?> top brokers for reliability, speed and fees. Browse our carefully-crafted reviews to find the best Forex broker for your needs.
 		</p>
 
-		<div class="introduction__disclosure">
-			<strong>⚠️ Risk Warning:</strong> Leveraged CFD/Forex trading carries a high risk of losing your capital and may not be suitable for all investors. Make sure you fully understand the risks before trading.
-		</div>
+		<details class="risk-note">
+			<summary>Risk Warning <span class="ri-icon">i</span></summary>
+			<p>Leveraged CFD/Forex trading carries a high risk of losing your capital and may not be suitable for all investors. Make sure you fully understand the risks before trading.</p>
+		</details>
 	</div>
 </section>
 

@@ -19,33 +19,54 @@ a{color:var(--c-blue)}
 img{max-width:100%;height:auto}
 .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
 
-/* Header — Investing.com style: 2 hàng nền tối */
+/* Header — Investing.com style: hàng 1 tối, hàng 2 sáng */
 .site-header{position:sticky;top:0;z-index:50}
-.site-header__row1{background:#212121}
-.site-header__row1 .container{display:flex;align-items:center;gap:26px;height:56px}
-.site-header__row2{background:#2b2b2b;border-top:1px solid #3a3a3a}
-.site-header__row2 .container{display:flex;align-items:center;height:42px;overflow-x:auto}
+.site-header__row1{background:#1c1c1c}
+.site-header__row1 .container{display:flex;align-items:center;gap:26px;height:50px}
+.site-header__row2{background:#f7f7f7;border-bottom:1px solid #e3e3e3}
+.site-header__row2 .container{display:flex;align-items:center;justify-content:center;height:44px;overflow-x:auto}
 .site-logo{font-weight:900;font-size:1.35rem;color:#fff;text-decoration:none;letter-spacing:-.5px;white-space:nowrap}
 .site-logo span{color:var(--c-green)}
+
+/* Row 1 — nav chính (nền tối, chữ trắng) */
 .nav-primary{flex:1}
-.nav-primary ul,.nav-sub ul{list-style:none;margin:0;padding:0;display:flex;gap:4px}
-.nav-primary a{color:#e0e0e0;text-decoration:none;font-weight:600;font-size:.9rem;padding:8px 12px;border-radius:6px;white-space:nowrap;display:block}
-.nav-primary a:hover{background:#333;color:#fff}
+.nav-primary ul{list-style:none;margin:0;padding:0;display:flex;gap:2px}
+.nav-primary a{color:#fff;text-decoration:none;font-weight:700;font-size:.92rem;padding:8px 14px;border-radius:6px;white-space:nowrap;display:block}
+.nav-primary a:hover{background:#333}
 .nav-primary .active a{color:#FDB947}
-.nav-sub a{color:#bdbdbd;text-decoration:none;font-size:.85rem;padding:9px 14px;white-space:nowrap;display:block;border-bottom:2px solid transparent}
-.nav-sub a:hover{color:#fff}
-.nav-sub .active a{color:#fff;border-bottom-color:#FDB947;font-weight:700}
-.header-cta{background:#FDB947;color:#212121;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:800;font-size:.85rem;white-space:nowrap}
+
+/* Row 2 — submenu (nền sáng, chữ xám, gạch dọc) */
+.nav-sub ul{list-style:none;margin:0;padding:0;display:flex;align-items:center}
+.nav-sub li:not(:first-child){border-left:1px solid #dadada}
+.nav-sub a{color:#6c6c6c;text-decoration:none;font-size:.82rem;padding:2px 14px;white-space:nowrap;display:block}
+.nav-sub a:hover{text-decoration:underline}
+.nav-sub .active a{color:#1c1c1c;font-weight:700}
+
+.header-cta{background:#FDB947;color:#212121;padding:7px 16px;border-radius:6px;text-decoration:none;font-weight:800;font-size:.85rem;white-space:nowrap}
 .header-cta:hover{background:#f0a82e}
 .nav-toggle{display:none;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer}
 
 /* Introduction block — nền xanh nhạt */
-.introduction{background:var(--c-intro);padding:30px 0 28px;border-bottom:1px solid var(--c-line)}
-.introduction__title{font-size:2rem;margin:0 0 12px;font-weight:900;letter-spacing:-.5px;color:var(--c-dark)}
-.entry-meta{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:var(--c-muted);margin-bottom:14px}
-.entry-meta .updated{font-weight:700;color:#424242}
-.introduction__description{font-size:1.02rem;max-width:900px;color:#424242;line-height:1.65;margin:0 0 16px}
-.introduction__disclosure{background:#fff;border:1px solid var(--c-line);border-left:4px solid var(--c-amber);border-radius:8px;padding:12px 16px;font-size:.9rem;color:#54657a;max-width:900px}
+.introduction{background:var(--c-intro);padding:30px 0 28px}
+.introduction__title{font-size:2.4rem;margin:0 0 8px;font-weight:800;letter-spacing:-.5px;color:#1c1c1c}
+.introduction .updated{font-size:.78rem;letter-spacing:.5px;color:#8a8a8a;font-weight:600;margin-bottom:16px}
+
+/* Author boxes */
+.author-boxes{display:flex;gap:40px;flex-wrap:wrap;margin-bottom:18px}
+.author-box{display:flex;align-items:center;gap:10px}
+.ab-avatar{width:42px;height:42px;border-radius:50%;flex:0 0 42px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.85rem}
+.ab-info{display:flex;flex-direction:column;line-height:1.3}
+.ab-role{display:flex;align-items:center;gap:5px;color:#f59300;font-weight:700;font-size:.85rem}
+.ab-name{color:#1c1c1c;font-weight:600;font-size:.95rem}
+
+.introduction__description{font-size:1.05rem;max-width:1000px;color:#3a4654;line-height:1.7;margin:0 0 14px}
+
+/* Risk warning — link nhỏ + tooltip */
+.risk-note{display:inline-block;font-size:.92rem}
+.risk-note summary{list-style:none;cursor:pointer;color:#8a93a0;display:inline-flex;align-items:center;gap:8px}
+.risk-note summary::-webkit-details-marker{display:none}
+.risk-note .ri-icon{width:18px;height:18px;border:1px solid #b6bcc6;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-style:italic;font-size:.72rem;color:#8a93a0;font-family:Georgia,serif}
+.risk-note p{margin:10px 0 0;max-width:900px;background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:12px 16px;font-size:.88rem;color:#54657a;line-height:1.55}
 
 /* Content layout: TOC + nội dung */
 .content-wrap{display:grid;grid-template-columns:240px 1fr;gap:34px;padding-top:30px;padding-bottom:20px;align-items:start}
